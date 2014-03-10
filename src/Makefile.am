@@ -2,7 +2,7 @@
 # AUTOMAKE
 
 AM_CPPFLAGS = ${regular_CPPFLAGS} -I${abs_top_srcdir}/src
-AM_CFLAGS = ${regular_CFLAGS} ${libxtables_CFLAGS}
+AM_CFLAGS = ${regular_CFLAGS}
 
 # Not having Kbuild in Makefile.extra because it will already recurse
 .PHONY: modules modules_install clean_modules
@@ -10,7 +10,7 @@ AM_CFLAGS = ${regular_CFLAGS} ${libxtables_CFLAGS}
 _kcall = -C ${kbuilddir} M=${abs_srcdir}
 
 modules:
-	@echo -n "Xtables-addons ${PACKAGE_VERSION} - Linux "
+	@echo -n "amhello ${PACKAGE_VERSION} - Linux "
 	@if [ -n "${kbuilddir}" ]; then ${MAKE} ${_kcall} --no-print-directory -s kernelrelease; fi;
 	${AM_V_silent}if [ -n "${kbuilddir}" ]; then ${MAKE} ${_kcall} modules; fi;
 
