@@ -37,10 +37,11 @@ POST_UNINSTALL = :
 build_triplet = x86_64-unknown-linux-gnu
 host_triplet = x86_64-unknown-linux-gnu
 subdir = .
-DIST_COMMON = README $(am__configure_deps) $(dist_doc_DATA) \
+DIST_COMMON = $(am__configure_deps) $(dist_doc_DATA) \
 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
-	$(srcdir)/config.h.in $(top_srcdir)/configure compile \
-	config.guess config.sub depcomp install-sh ltmain.sh missing
+	$(srcdir)/config.h.in $(top_srcdir)/configure COPYING INSTALL \
+	compile config.guess config.sub depcomp install-sh ltmain.sh \
+	missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -127,12 +128,12 @@ DIST_ARCHIVES = $(distdir).tar.gz
 GZIP_ENV = --best
 distuninstallcheck_listfiles = find . -type f -print
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /root/program/c/automake/kohello/missing --run aclocal-1.11
-AMTAR = ${SHELL} /root/program/c/automake/kohello/missing --run tar
+ACLOCAL = ${SHELL} /root/github/amhello/missing --run aclocal-1.11
+AMTAR = ${SHELL} /root/github/amhello/missing --run tar
 AR = ar
-AUTOCONF = ${SHELL} /root/program/c/automake/kohello/missing --run autoconf
-AUTOHEADER = ${SHELL} /root/program/c/automake/kohello/missing --run autoheader
-AUTOMAKE = ${SHELL} /root/program/c/automake/kohello/missing --run automake-1.11
+AUTOCONF = ${SHELL} /root/github/amhello/missing --run autoconf
+AUTOHEADER = ${SHELL} /root/github/amhello/missing --run autoheader
+AUTOMAKE = ${SHELL} /root/github/amhello/missing --run automake-1.11
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -164,7 +165,7 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /root/program/c/automake/kohello/missing --run makeinfo
+MAKEINFO = ${SHELL} /root/github/amhello/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 NM = /usr/bin/nm -B
 NMEDIT = 
@@ -186,10 +187,10 @@ SET_MAKE =
 SHELL = /bin/sh
 STRIP = strip
 VERSION = 1.0
-abs_builddir = /root/program/c/automake/kohello
-abs_srcdir = /root/program/c/automake/kohello
-abs_top_builddir = /root/program/c/automake/kohello
-abs_top_srcdir = /root/program/c/automake/kohello
+abs_builddir = /root/github/amhello
+abs_srcdir = /root/github/amhello
+abs_top_builddir = /root/github/amhello
+abs_top_srcdir = /root/github/amhello
 ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
 am__include = include
@@ -217,7 +218,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /root/program/c/automake/kohello/install-sh
+install_sh = ${SHELL} /root/github/amhello/install-sh
 kbuilddir = /lib/modules/2.6.32/build
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
@@ -243,7 +244,7 @@ top_builddir = .
 top_srcdir = .
 
 #ACLOCAL_AMFLAGS  = -I m4
-SUBDIRS = src
+SUBDIRS = src src/lib
 dist_doc_DATA = README
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

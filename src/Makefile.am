@@ -1,6 +1,8 @@
 # -*- Makefile -*-
 # AUTOMAKE
 
+SUBDIRS = lib
+
 AM_CPPFLAGS = ${regular_CPPFLAGS} -I${abs_top_srcdir}/src
 AM_CFLAGS = ${regular_CFLAGS}
 
@@ -26,11 +28,9 @@ install-exec-local: modules_install
 
 clean-local: clean_modules
 
-sbin_PROGRAMS = hello
-hello_LDADD = libhello.la
 
-lib_LTLIBRARIES = libhello.la
-libhello_la_SOURCES = libhello.c
-
+#sbin_PROGRAMS = hello
 bin_PROGRAMS = hello
 hello_SOURCES = hello.c
+
+hello_LDADD = lib/libhello.la

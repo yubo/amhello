@@ -1,5 +1,5 @@
 # -*- Makefile -*-
 
 #ACLOCAL_AMFLAGS  = -I m4
-SUBDIRS = src
+SUBDIRS = src src/lib
 dist_doc_DATA = README

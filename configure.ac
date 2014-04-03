@@ -64,5 +64,5 @@ AC_SUBST([regular_CPPFLAGS])
 AC_SUBST([regular_CFLAGS])
 AC_SUBST([kbuilddir])
 
-AC_CONFIG_FILES([Makefile src/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile src/lib/Makefile])
 AC_OUTPUT
